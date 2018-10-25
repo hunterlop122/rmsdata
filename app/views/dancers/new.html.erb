@@ -1,0 +1,38 @@
+<div id="new_form">
+    <h1>New Dancer</h1>
+
+        <%= form_for Dancer.new do |form| %>
+                <p>
+                <%= form.label :firstname, "Firstname:" %>
+                <%= form.text_field :firstname %>
+                </p>
+                <p>
+                <%= form.label :lastname, "Lastname:" %>
+                <%= form.text_field :lastname %>
+                </p>
+                <p>
+                <%= form.label :location, "Location:" %>
+                <%= form.text_field :location %>
+                </p>
+                <p>
+                <%= form.label :dancestyle, "Dancestyle:" %>
+                <%= form.text_field :dancestyle %>
+                </p>
+                <p>
+                <%= form.label :email, "Email:" %>
+                <%= form.text_field :email %>
+                </p>
+                <p>
+                <%= form.label :phone, "Phone number:" %>
+                <%= form.text_field :phone %>
+                </p>
+                <p>
+                <%= form.label :ighandle, "Ighandle:" %>
+                <%= form.text_field :ighandle %>
+                </p>
+            </p> 
+            <p class='buttons'>
+                <%= form.submit "Submit" %>
+            </p>  
+        <% end %>
+</div>

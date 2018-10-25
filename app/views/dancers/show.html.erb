@@ -1,0 +1,30 @@
+<table id="show_dancerData">
+        <thead>
+            <tr>
+                <th scope="col" id="Firstname">Firstname</th>
+                <th scope="col" id="Lastname">Lastname</th>
+                <th scope="col" id="Location">Location</th>
+                <th scope="col" id="Email">Email</th>
+                <th scope="col" id="Dance Style">Dance Style</th>
+                <th scope="col" id="Phone Number">Phone Number</th>
+                <th scope="col" id="Instagram name">Instagram name</th>
+                <th scope="col" id="Delete Entry">Delete Entry</th>
+                
+            </tr>
+        </thead>
+    <%= Dancer.find_each do |dancer| %>
+
+        <tbody>
+            <tr>
+                <td><%= dancer.firstname %></td>
+                <td><%= dancer.lastname %></td>
+                <td><%= dancer.location %></td>
+                <td><%= dancer.email %></td>
+                <td><%= dancer.dancestyle %></td>
+                <td><%= dancer.phone %></td>
+                <td><%= dancer.ighandle %></td>
+                <td><%= link_to 'Delete', dancer_path(dancer), method: :delete, data: { confirm: 'Are you sure?' }, :id => "Database_delete"%></td>
+                </tr>
+        </tbody>
+    <% end %>
+</table>

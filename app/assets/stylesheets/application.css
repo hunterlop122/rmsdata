@@ -1,0 +1,172 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+    background-color: black;
+    color: white;
+}
+#info_box{
+    background-color: #1AB7EA;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#show_dancerData {
+    border-style: solid;
+    border-width: 5px;
+    border-color: #1AB7EA;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 20px;
+    width: 90%;
+    margin:0 auto;
+
+}
+#show_dancerData th {
+    border-bottom-style: solid;
+    border-width: 5px;
+    border-color: #1AB7EA;
+    padding-bottom: 15px;
+    padding-right: 40px;
+}
+#show_dancerData td {
+    padding-top: 10px;
+    padding-right: 40px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+}
+#show_dancerData td:hover {
+    background-color: #636c73;
+}
+#navigation_text {
+    color: white;
+    margin-right: 5px;
+    background-color: #262626;
+    padding: 5px;
+    float: right;
+
+}
+#navigation_right {
+    padding: 5px;
+    margin-bottom: 15px;
+}
+#navigation_logo {
+    position: absolute;
+    top: 10px;
+    left: 45px;
+    height: 21px;
+    width: 161px;
+}
+
+#new_form {
+    background-color: #1AB7EA;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+    border-radius: 20px;
+    
+}
+#navigation {
+    padding: 10px;
+    margin-bottom: 35px;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: #1AB7EA;
+}
+
+#login {
+    width: 50%;
+    margin:0 auto;
+    background-color: #1AB7EA;
+    border-radius: 20px;
+    text-align: center;
+    padding: 15px;
+}
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#Database_delete {
+    color: black;
+    background-color: none;
+    padding: none;
+}
+#login_emaillabel, #login_passwordlabel {
+    font-size: 15px;
+}
+#isContainer {
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 25px;
+    padding-bottom: 50px;
+    border: 2px solid #1AB7EA;
+
+}
+#dancerig {
+    display: none;
+}
+#yesbtn {
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#nobtn {
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: white;
+    padding: 30px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#GObtn {
+    border-radius: 5px;
+    background-color: 	#A9A9A9;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
