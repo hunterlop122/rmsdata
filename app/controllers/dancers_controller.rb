@@ -26,9 +26,6 @@ class DancersController < ApplicationController
     @dancer.destroy
     redirect_to '/dancers/show'
   end
-  def isadancer 
-    render "dancers/isadancer"
-  end
 
   private
 

@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<head>
-<title>Are You A Dancer</title>
-</head>
+
 <div id="dancerig"><%= igs = Dancer.all.map { |r| r.ighandle } %></div>
 <script>
     var igsData = <%= raw igs %>;
@@ -44,4 +41,3 @@
         <button type="button" class="btn" id="GObtn" onclick="openInstagram()">Go To Dancer Page</button>
     </div>
 </div>
-</html>
