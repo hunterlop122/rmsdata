@@ -2,20 +2,33 @@ class DancersController < ApplicationController
  def index
     @dancers = Dancer.all
   end
- def new
+  def new
     @dancer = Dancer.new
-    render :new
- end
+    respond_to do |format|
+      format.html
+      format.json
+      end
+      render :new
+  end
 
- def create
-    @dancer = Dancer.new(dancerI)
-    if @dancer.save
-    # Handle success
-        render :show
-    else
-      # Handle failure
+  def create
+   @dancer = Dancer.new(dancer_param)
+    respond_to do |format|
+       if @dancer.save
+        format.html { redirect_to @dancer, notice: "Save process completed!" }
+        format.json { render json: @dancer, status: :created, location: @dancer }
+       else
+          format.html {
+            flash.now[:notice]="Save proccess coudn't be completed!"
+            render :new
+          }
+          format.json { render json: @dancer.errors, status: :unprocessable_entity}
+      end
     end
   end
+def dancer_param
+      params.require(:dancer).permit(:firstname, :lastname, :location, :dancestyle, :email, :phone, :ighandle)
+    end
 
   def show
     @dancer = Dancer.all
@@ -25,6 +38,9 @@ class DancersController < ApplicationController
     @dancer = Dancer.find(dancerID)
     @dancer.destroy
     redirect_to '/dancers/show'
+  end
+
+  def button
   end
 
   private

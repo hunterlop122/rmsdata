@@ -11,6 +11,7 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use Puma as the app server

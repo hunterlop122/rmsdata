@@ -15,7 +15,7 @@
     <%= Dancer.find_each do |dancer| %>
 
         <tbody>
-            <tr>
+            <tr id='<%= dancer.id %>'>
                 <td><%= dancer.firstname %></td>
                 <td><%= dancer.lastname %></td>
                 <td><%= dancer.location %></td>

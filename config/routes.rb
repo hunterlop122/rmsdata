@@ -2,6 +2,7 @@ Rails.application.routes.draw do
     get 'dancers/isadancer'
     resources :dancers
     root to: 'dancers#show'
+    get '/button', to: 'dancers#button'
 
 
 
