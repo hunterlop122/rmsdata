@@ -1,7 +1,12 @@
 
-<div id="dancerig"><%= igs = Dancer.all.map { |r| r.ighandle } %></div>
+<div id="dancerig">
+<%= igs = Dancer.all.map { |r| r.ighandle  } %>
+<%= dancerC = Dancer.all.map { |r| r.dancestyle } %>
+</div>
 <script>
     var igsData = <%= raw igs %>;
+    var dancerC = <%= raw dancerC %>;
+    var together = igsData.concat(dancerC); 
 </script>
 
 <div class="container" id="isContainer">
@@ -15,6 +20,5 @@
         <button type="button" class="btnYes" id="yesbtn" onclick="yesbtn()">Yes</button>
         <button type="button" class="btn" id="nobtn" onclick="nobtn()">No</button>
         </div>
-
     </div>
 </div>

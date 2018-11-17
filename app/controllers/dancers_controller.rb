@@ -15,7 +15,7 @@ class DancersController < ApplicationController
    @dancer = Dancer.new(dancer_param)
     respond_to do |format|
        if @dancer.save
-        format.html { redirect_to @dancer, notice: "Save process completed!" }
+        format.html { redirect_to '/dancers/isadancer', notice: "Save process completed!" }
         format.json { render json: @dancer, status: :created, location: @dancer }
        else
           format.html {
@@ -43,6 +43,9 @@ def dancer_param
   def button
   end
 
+  def isadancer
+    render :isadancer
+  end
   private
 
     def dancerI

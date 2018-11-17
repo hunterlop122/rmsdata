@@ -1,0 +1,2 @@
+class Igdancer < ApplicationRecord
+end

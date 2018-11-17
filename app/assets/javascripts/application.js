@@ -31,14 +31,6 @@ $(document).ready(function () {
     });
 });
 
-function openInstagram() {
-    i = i + 1; // increase i by one
-    i = i % igsData.length; // if we've gone too high, start from `0` again
-    console.log(igsData[i]);
-    window.open(`https://www.instagram.com/${igsData[i]}`);
-    return igsData[i]; // give us back the item of where we are now
-}
-
 function yesbtn() {
 }
 function nobtn() {
@@ -55,7 +47,7 @@ $(document).ready(function () {
                     email: "",
                     dancestyle: "Dancer",
                     phone: "",
-                    ighandle: igsData[i],
+                    ighandle: together[c],
                 }
             },
             error: function (error) {
@@ -63,12 +55,12 @@ $(document).ready(function () {
             },
             success: function (data) {
                 console.log(data);
+                window.location.replace("/dancers/isadancer");
             },
             type: 'POST'
         });
     });
-})
-$(document).ready(function () {
+
     $('#nobtn').click(function () {
         $.ajax({
             url: "/dancers",
@@ -88,8 +80,18 @@ $(document).ready(function () {
             },
             success: function (data) {
                 console.log(data);
+                window.location.replace("/dancers/isadancer");
             },
             type: 'POST'
         });
     });
 })
+
+function openInstagram() {
+    var a = together.lastIndexOf("");
+    var b = a - 1;
+    var c = b / 2;
+    window.open(`https://www.instagram.com/${together[c]}`);
+    console.log(together[c]);
+    return together[c]; // give us back the item of where we are now
+}
