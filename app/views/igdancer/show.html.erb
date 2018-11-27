@@ -1,0 +1,30 @@
+<table id="show_dancerData">
+        <thead>
+            <tr>
+                <th scope="col" id="ighandle">ighandle</th>
+                <th scope="col" id="post">post</th>
+                <th scope="col" id="followers">followers</th>
+                <th scope="col" id="following">following</th>
+                <th scope="col" id="name">name</th>
+                <th scope="col" id="bio">bio</th>
+                <th scope="col" id="Delete Entry">Delete Entry</th>
+
+            </tr>
+        </thead>
+        <br>
+        <br>
+    <%= Igdancer.find_each do |igdancer| %>
+
+        <tbody>
+            <tr id='<%= igdancer.id %>'>
+                <td><%= igdancer.ighandle %></td>
+                <td><%= igdancer.post %></td>
+                <td><%= igdancer.followers %></td>
+                <td><%= igdancer.following %></td>
+                <td><%= igdancer.name %></td>
+                <td><%= igdancer.bio %></td>
+                <td><%= link_to 'Delete', igdancer_path(igdancer), method: :delete, data: { confirm: 'Are you sure?' }, :id => "Database_delete"%></td>
+                </tr>
+        </tbody>
+    <% end %>
+</table>

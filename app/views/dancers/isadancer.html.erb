@@ -3,12 +3,93 @@
 <%= igs = Dancer.all.map { |r| r.ighandle  } %>
 <%= dancerC = Dancer.all.map { |r| r.dancestyle } %>
 </div>
+
+
+
 <script>
     var igsData = <%= raw igs %>;
     var dancerC = <%= raw dancerC %>;
-    var together = igsData.concat(dancerC); 
-</script>
+    var together = igsData.concat(dancerC);
 
+    function openInstagram() {
+        var a = together.lastIndexOf("");
+        var b = a - 1;
+        var c = b / 2;
+        var d = together[c];
+        window.open(`https://www.instagram.com/${together[c]}`);
+        console.log(d);
+        return d; // give us back the item of where we are now
+    }
+    var a = openInstagram();
+
+    $(document).ready(function () {
+        $('.destroy').on('click', function () {
+            $.ajax({
+                url: '/dancers/' + this.parentElement.id,
+                type: 'DELETE',
+                success: function (r) {
+
+                }
+            });
+        });
+    });
+    function yesbtn() {
+    }
+    function nobtn() {
+    }
+    $(document).ready(function () {
+        $('#nobtn').click(function () {
+            $.ajax({
+                url: "/dancers",
+                data: {
+                    dancer: {
+                        firstname: "",
+                        lastname: "",
+                        location: "",
+                        email: "",
+                        dancestyle: "Dancer",
+                        phone: "",
+                        ighandle: a,
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                },
+                success: function (data) {
+                    console.log(data);
+                    window.location.replace("/dancers/isadancer");
+                },
+                type: 'POST'
+            });
+        });
+
+        $('#yesbtn').click(function () {
+            $.ajax({
+                url: "/igdancer",
+                data: {
+                    igdancer: {
+                        ighandle: a,
+                        post: "",
+                        followers: "",
+                        following: "",
+                        name: "",
+                        bio: "",
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                },
+                success: function (data) {
+                    console.log(data);
+                    window.location.replace("/dancers/isadancer");
+                },
+                type: 'POST'
+            });
+        });
+    })
+
+</script>
+<p id="demo"></p>
 <div class="container" id="isContainer">
     <br>
     <div class="jumbotron">
