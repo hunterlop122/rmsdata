@@ -85,7 +85,7 @@
     text-align: center;
     width: 500px;
     border-radius: 20px;
-    
+
 }
 #navigation {
     padding: 10px;
@@ -180,4 +180,12 @@ input[type=text], input[type=email], input[type=password] {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+#dancerIghandle {
+  background-color: #DCDCDC;
+  border-radius: 3px;
+  padding: 10px 70px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }

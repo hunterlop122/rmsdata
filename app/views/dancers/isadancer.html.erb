@@ -1,7 +1,10 @@
 
 <div id="dancerig">
+
 <%= igs = Dancer.all.map { |r| r.ighandle  } %>
 <%= dancerC = Dancer.all.map { |r| r.dancestyle } %>
+<%= dancerDelete = Igdancer.all.map { |r| r.ighandle }
+Dancer.where(ighandle: dancerDelete).delete_all %>
 </div>
 
 
@@ -23,7 +26,7 @@
     var a = openInstagram();
 
     $(document).ready(function () {
-        $('.destroy').on('click', function () {
+        $('#nobtn').on('click', function () {
             $.ajax({
                 url: '/dancers/' + this.parentElement.id,
                 type: 'DELETE',
@@ -47,7 +50,7 @@
                         lastname: "",
                         location: "",
                         email: "",
-                        dancestyle: "Dancer",
+                        dancestyle: "notADancer",
                         phone: "",
                         ighandle: a,
                     }
@@ -87,13 +90,17 @@
             });
         });
     })
-
+    window.onload = function(){
+      document.getElementById("dancerIghandle").innerHTML = a;
+    }
 </script>
-<p id="demo"></p>
+
 <div class="container" id="isContainer">
     <br>
     <div class="jumbotron">
-        <h1 class="display-4" id="title">Is A Dancer?</h1>
+        <h2 class="display-4" id="title">Dancer Or Not A Dancer?</h2>
+        <h2 id="dancerIghandle"></h2>
+        <br>
         <button type="button" class="btn" id="GObtn" onclick="openInstagram()">Go To Dancer Page</button>
         <br>
         <br>

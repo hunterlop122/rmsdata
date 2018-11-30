@@ -1,1 +1,7 @@
 <h1>Index Page</h1>
+<%=
+dancerC = Igdancer.all.map { |r| r.ighandle }
+Dancer.where(ighandle: dancerC).delete_all
+Dancer.where(ighandle: dancerC).ids
+%>
+<%= dancerC = Igdancer.all.map { |r| r.ighandle } %>
