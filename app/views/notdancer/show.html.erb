@@ -1,0 +1,20 @@
+<table id="show_dancerData">
+        <thead>
+            <tr>
+                <th scope="col" id="ighandle">ighandle</th>
+                <th scope="col" id="Delete Entry">Delete Entry</th>
+
+            </tr>
+        </thead>
+        <br>
+        <br>
+    <%= Notdancer.find_each do |notdancer| %>
+
+        <tbody>
+            <tr id='<%= notdancer.id %>'>
+                <td><%= notdancer.ighandle %></td>
+                <td><%= link_to 'Delete', notdancer_path(notdancer), method: :delete, data: { confirm: 'Are you sure?' }, :id => "Database_delete"%></td>
+                </tr>
+        </tbody>
+    <% end %>
+</table>

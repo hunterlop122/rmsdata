@@ -3,8 +3,10 @@
 
 <%= igs = Dancer.all.map { |r| r.ighandle  } %>
 <%= dancerC = Dancer.all.map { |r| r.dancestyle } %>
-<%= dancerDelete = Igdancer.all.map { |r| r.ighandle }
-Dancer.where(ighandle: dancerDelete).delete_all %>
+<%= dancerIDelete = Igdancer.all.map { |r| r.ighandle }
+Dancer.where(ighandle: dancerIDelete).delete_all %>
+<%= dancerNDelete = Notdancer.all.map { |r| r.ighandle }
+Dancer.where(ighandle: dancerNDelete).delete_all %>
 </div>
 
 
@@ -26,7 +28,7 @@ Dancer.where(ighandle: dancerDelete).delete_all %>
     var a = openInstagram();
 
     $(document).ready(function () {
-        $('#nobtn').on('click', function () {
+        $('nobtn').on('click', function () {
             $.ajax({
                 url: '/dancers/' + this.parentElement.id,
                 type: 'DELETE',
@@ -43,15 +45,9 @@ Dancer.where(ighandle: dancerDelete).delete_all %>
     $(document).ready(function () {
         $('#nobtn').click(function () {
             $.ajax({
-                url: "/dancers",
+                url: "/notdancer",
                 data: {
-                    dancer: {
-                        firstname: "",
-                        lastname: "",
-                        location: "",
-                        email: "",
-                        dancestyle: "notADancer",
-                        phone: "",
+                    notdancer: {
                         ighandle: a,
                     }
                 },
@@ -60,7 +56,7 @@ Dancer.where(ighandle: dancerDelete).delete_all %>
                 },
                 success: function (data) {
                     console.log(data);
-                    window.location.replace("/dancers/isadancer");
+                    location.reload();
                 },
                 type: 'POST'
             });
@@ -83,7 +79,6 @@ Dancer.where(ighandle: dancerDelete).delete_all %>
                     console.log(error);
                 },
                 success: function (data) {
-                    console.log(data);
                     window.location.replace("/dancers/isadancer");
                 },
                 type: 'POST'
