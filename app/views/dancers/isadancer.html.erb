@@ -81,8 +81,7 @@ Dancer.where(ighandle: dancerNDelete).delete_all %>
                 success: function (data) {
                   setTimeout(function(){
                     location.href = "/dancers/isadancer";
-                    timedRefresh(250);
-                  }, 1000);
+                  }, 10000);
 
                 },
                 type: 'POST'
