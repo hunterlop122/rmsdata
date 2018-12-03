@@ -56,6 +56,7 @@ Dancer.where(ighandle: dancerNDelete).delete_all %>
                 },
                 success: function (data) {
                     window.location.replace("/dancers/isadancer");
+                    timedRefresh(250);
                 },
                 type: 'POST'
             });
@@ -79,6 +80,7 @@ Dancer.where(ighandle: dancerNDelete).delete_all %>
                 },
                 success: function (data) {
                     window.location.replace("/dancers/isadancer");
+                    timedRefresh(250);
                 },
                 type: 'POST'
             });
