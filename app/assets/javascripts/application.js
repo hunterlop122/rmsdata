@@ -16,3 +16,10 @@
 //= require jquery3
 //= require jquery_ujs
 //= require_tree .
+
+function timedRefresh(timeoutPeriod) {
+  setTimeout("location.reload(true);",timeoutPeriod);
+}
+function areyouadancer() {
+  timedRefresh(250);
+}

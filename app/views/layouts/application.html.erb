@@ -20,8 +20,8 @@
         <td><%= link_to 'IgDancers', "/igdancer/show",  :id => "navigation_text"%></td>
         <td><%= link_to 'Show', "/dancers/show",  :id => "navigation_text"%></td>
         <td><%= link_to 'New', new_dancer_url, :id => "navigation_text"%></td>
-        <td><%= link_to 'Are you A Dancer', "/dancers/isadancer",  :id => "navigation_text"%></td>
-      </th>
+        <td><a href="/dancers/isadancer" id="navigation_text" onclick="areyouadancer()">Are you A Dancer</a></td>
+      <th>
     </div>
   </div>
     <p class="notice"><%= notice %></p>
