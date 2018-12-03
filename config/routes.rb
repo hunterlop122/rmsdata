@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :dancers
     resources :igdancer
     resources :notdancer
-    get 'igdancer/show'
     root to: 'dancers#show'
     get '/button', to: 'dancers#button'
 
