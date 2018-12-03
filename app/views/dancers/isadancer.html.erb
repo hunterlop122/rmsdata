@@ -55,8 +55,8 @@ Dancer.where(ighandle: dancerNDelete).delete_all %>
                     console.log(error);
                 },
                 success: function (data) {
-                    window.location.replace("/dancers/isadancer");
-                    areyouadancer();
+                  window.location.replace("/dancers/isadancer");
+                  areyouadancer();
                 },
                 type: 'POST'
             });
@@ -79,11 +79,8 @@ Dancer.where(ighandle: dancerNDelete).delete_all %>
                     console.log(error);
                 },
                 success: function (data) {
-                  setTimeout(function(){
-                    location.href = "/dancers/isadancer";
-                    areyouadancer();
-                  }, 10000);
-
+                  window.location.replace("/dancers/isadancer");
+                  areyouadancer();
                 },
                 type: 'POST'
             });
