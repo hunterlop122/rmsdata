@@ -21,5 +21,5 @@ function timedRefresh(timeoutPeriod) {
   setTimeout("location.reload(true);",timeoutPeriod);
 }
 function areyouadancer() {
-  timedRefresh(250);
+  timedRefresh(200);
 }
