@@ -15,7 +15,7 @@ class NotdancerController < ApplicationController
     @notdancer = Notdancer.new(notdancer_param)
      respond_to do |format|
         if @notdancer.save
-         format.html { redirect_to '/dancer/isadancer', notice: "Save process completed!" }
+         format.html { redirect_to '/dancers/isadancer', notice: "Save process completed!" }
          format.json { render json:@notdancer, status: :created, location: @notdancer }
         else
            format.html {

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'notdancer/index'
     get 'dancers/isadancer'
     get 'igdancer/show'
+    get 'notdancer/index'
     resources :dancers
     resources :igdancer
     resources :notdancer
