@@ -9,7 +9,6 @@ class CreateDancers < ActiveRecord::Migration[5.2]
       t.string :phone
       t.string :ighandle
 
-      t.timestamps
     end
   end
 end

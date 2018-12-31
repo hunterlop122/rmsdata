@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_062347) do
     t.string "email"
     t.string "phone"
     t.string "ighandle"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "igdancers", force: :cascade do |t|
@@ -31,14 +29,10 @@ ActiveRecord::Schema.define(version: 2018_12_01_062347) do
     t.string "following"
     t.string "name"
     t.string "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "notdancers", force: :cascade do |t|
     t.string "ighandle"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
