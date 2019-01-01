@@ -15,7 +15,7 @@ Dancer.where(ighandle: dancerNDelete).delete_all %>
 
     function openInstagram() {
         var d = igsData[0];
-        window.open(`https://www.instagram.com/user/?${igsData[0]}`);
+        window.open(`http://instagram.com/web/friendships/${igsData[0]}/follow/`);
         console.log(d);
         return d; // give us back the item of where we are now
     }
