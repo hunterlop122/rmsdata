@@ -1,6 +1,5 @@
 
 <div id="dancerig">
-
 <%= igs = Dancer.all.map { |r| r.ighandle  } %>
 <%= dancerC = Dancer.all.map { |r| r.dancestyle } %>
 <%= dancerIDelete = Igdancer.all.map { |r| r.ighandle }
@@ -13,15 +12,10 @@ Dancer.where(ighandle: dancerNDelete).delete_all %>
 
 <script>
     var igsData = <%= raw igs %>;
-    var dancerC = <%= raw dancerC %>;
-    var together = igsData.concat(dancerC);
 
     function openInstagram() {
-        var a = together.lastIndexOf("");
-        var b = a - 1;
-        var c = b / 2;
-        var d = together[c];
-        window.open(`https://instagram.com/user/?id=${together[c]}`);
+        var d = igsData[0];
+        window.open(`https://www.instagram.com/user/?${igsData[0]}`);
         console.log(d);
         return d; // give us back the item of where we are now
     }
