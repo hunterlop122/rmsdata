@@ -189,3 +189,6 @@ input[type=text], input[type=email], input[type=password] {
   text-decoration: none;
   display: inline-block;
 }
+#linkId {
+  width: 500px;
+}

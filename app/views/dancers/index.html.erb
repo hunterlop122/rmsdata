@@ -1,7 +1,14 @@
 <h1>Index Page</h1>
+<div id="dancerig">
 <%=
 dancerC = Igdancer.all.map { |r| r.ighandle }
 Dancer.where(ighandle: dancerC).delete_all
 Dancer.where(ighandle: dancerC).ids
 %>
-<%= dancerC = Igdancer.all.map { |r| r.ighandle } %>
+</div>
+
+<button type="button" name="TEST" onclick="trying()">TEST</button>
+<br>
+<input type="text" name="link" value="" id="linkId">
+
+<p id="demo"></p>

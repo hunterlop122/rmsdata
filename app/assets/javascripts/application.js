@@ -23,3 +23,45 @@ function timedRefresh(timeoutPeriod) {
 function areyouadancer() {
   timedRefresh(200);
 }
+function getSite() {
+  a = document.getElementById('linkId').value
+  console.log(a);
+  $.getJSON('http://api.allorigins.ml/get?url=' + encodeURIComponent(a) + '&callback=?', function(data){
+      console.log(data.contents);
+  });
+}
+function getInput() {
+  var a = document.getElementById('linkId').value
+  console.log(a);
+  $.getJSON('http://api.allorigins.ml/get?url=' + encodeURIComponent(a) + '&callback=?', function(data){
+      //var b = data.contents;
+      //console.log(b);
+      var el = document.createElement( 'html' );
+      el.innerHTML = data.contents;
+      var c = el.querySelector('title').value;
+      console.log(c);
+  });
+
+}
+
+function trying() {
+    var a = document.getElementById('linkId').value;
+  $.get('https://api.allorigins.ml/get?method=raw&url=' + encodeURIComponent(a), function(data){
+      var el = document.createElement( 'html' );
+      el.innerHTML = data.contents;
+      // works var c = el.querySelector('title').text;
+      //var c = el.find('meta content').text;
+      document.getElementById("demo").innerHTML = el.innerText;
+      //var phrase = el.innerText;
+      //var myRegexp = /phrase=(.*)/;
+      //var match = myRegexp.exec(phrase);
+      //alert(match[1]);
+  });
+
+}
+function okayy() {
+  var phrase = "yesthisismyphrase=thisiswhatIwantmatched";
+  var myRegexp = /phrase=(.*)/;
+  var match = myRegexp.exec(phrase);
+  alert(match[1]);
+}
