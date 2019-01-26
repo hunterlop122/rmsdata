@@ -65,3 +65,37 @@ function okayy() {
   var match = myRegexp.exec(phrase);
   alert(match[1]);
 }
+function testing() {
+var ighandle = document.getElementById('ighandle').value;
+var post = document.getElementById('post').value;
+var followers = document.getElementById('followers').value;
+var following = document.getElementById('following').value;
+var name = document.getElementById('name').value;
+var bio = document.getElementById('bio').value;
+
+$(document).ready(function () {
+
+$('#trybtn').click(function () {
+    $.ajax({
+        url: "/igdancer",
+        data: {
+            igdancer: {
+                ighandle: ighandle,
+                post: post,
+                followers: followers,
+                following: following,
+                name: name,
+                bio: bio,
+            }
+        },
+        error: function (error) {
+            console.log(error);
+        },
+        success: function (data) {
+          window.location.href = '/dancers/isadancer';
+        },
+        type: 'POST'
+    });
+});
+})
+}
